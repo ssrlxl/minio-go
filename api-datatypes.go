@@ -144,7 +144,7 @@ type ObjectInfo struct {
 	UserMetadata StringMap `json:"userMetadata,omitempty"`
 
 	// x-amz-tagging values in their k/v values.
-	UserTags map[string]string `json:"userTags"`
+	UserTags StringMap `json:"userTags"`
 
 	// x-amz-tagging-count value
 	UserTagCount int

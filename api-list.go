@@ -233,11 +233,13 @@ func (c *Client) listObjectsV2Query(ctx context.Context, bucketName, objectPrefi
 			return ListBucketV2Result{}, httpRespToErrorResponse(resp, bucketName, "")
 		}
 	}
-
+	fmt.Println("-----------------")
 	// Decode listBuckets XML.
 	listBucketResult := ListBucketV2Result{}
 	if err = xmlDecoder(resp.Body, &listBucketResult); err != nil {
+		fmt.Println(" ------------- ", err)
 		return listBucketResult, err
+
 	}
 
 	// This is an additional verification check to make
